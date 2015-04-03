@@ -39,10 +39,8 @@ BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000
 
 # Try to build the kernel
 TARGET_KERNEL_SOURCE := kernel/lge/v500
-#TARGET_PREBUILT_KERNEL := device/lge/v500/kernel
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3 lpj=67677 androidboot.hardware=awifi vmalloc=400M no_console_suspend
 TARGET_KERNEL_CONFIG := cyanogenmod_v500_defconfig
-
 
 BOARD_USES_ALSA_AUDIO:= true
 BOARD_USES_LEGACY_ALSA_AUDIO:= false
@@ -69,12 +67,6 @@ TARGET_USES_SF_BYPASS := true
 TARGET_USES_C2D_COMPOSITION := false
 
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
-
-# Recovery
-BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
-RECOVERY_FSTAB_VERSION = 2
-ENABLE_LOKI_RECOVERY := true
-BOARD_RECOVERY_SWIPE := true
 
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_BOOTIMAGE_PARTITION_SIZE := 23068672 # 22M
@@ -117,12 +109,6 @@ WIFI_DRIVER_FW_PATH_AP  := "ap"
 BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
 BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
 
-TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
-TARGET_RECOVERY_LCD_BACKLIGHT_PATH := \"/sys/class/leds/lcd-backlight/brightness\"
-TARGET_RECOVERY_FSTAB = device/lge/v500/fstab.gvar
-
-BOARD_HAS_NO_SELECT_BUTTON := true
-
 # SELinux policies
 # qcom sepolicy
 include device/qcom/sepolicy/sepolicy.mk
@@ -144,3 +130,20 @@ BOARD_HARDWARE_CLASS := device/lge/v500/cmhw/
 
 TARGET_USES_LOGD := false
 BOARD_USES_LEGACY_MMAP := true
+
+# TWRP
+ENABLE_LOKI_RECOVERY := true
+TW_THEME := landscape_hdpi
+BOARD_HAS_NO_REAL_SDCARD := true
+RECOVERY_SDCARD_ON_DATA := true
+TW_NO_USB_STORAGE := false
+RECOVERY_GRAPHICS_USE_LINELENGTH := true
+TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
+TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
+TW_MAX_BRIGHTNESS := 255
+TW_NO_SCREEN_TIMEOUT := false
+BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
+BOARD_SUPPRESS_SECURE_ERASE := true
+TW_INCLUDE_JB_CRYPTO := true
+TARGET_RECOVERY_FSTAB := device/lge/v500/recovery.fstab
+BOARD_HAS_NO_SELECT_BUTTON := true

@@ -15,4 +15,5 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/v500.mk
+    $(LOCAL_DIR)/v500.mk \
+    $(LOCAL_DIR)/omni_v500.mk
