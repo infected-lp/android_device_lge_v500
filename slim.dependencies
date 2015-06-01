@@ -1,0 +1,9 @@
+[
+ {
+   "remote":      "github",
+   "repository":  "Cyanogenmod/android_kernel_lge_v500",
+   "target_path": "kernel/lge/v500",
+   "revision":    "cm-12.1"
+ }
+]
+
