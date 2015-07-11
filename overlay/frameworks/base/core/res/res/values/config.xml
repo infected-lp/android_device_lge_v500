@@ -90,9 +90,6 @@
 
     <bool name="config_lidControlsSleep">true</bool>
 
-    <!--  Maximum number of supported users -->
-    <integer name="config_multiuserMaximumUsers">8</integer>
-
     <bool name="config_enableWifiDisplay">true</bool>
 
     <!-- Array of allowable ConnectivityManager network types for tethering -->
@@ -116,9 +113,12 @@
     <string-array translatable="false" name="config_tether_bluetooth_regexs">
     </string-array>
 
-    <!--  Maximum number of supported users -->
+    <!-- Maximum number of supported users -->
     <integer name="config_multiuserMaximumUsers">8</integer>
     <!-- Whether UI for multi user should be shown -->
     <bool name="config_enableMultiUserUI">true</bool>
+
+    <!-- Enable sdcard unmount storage option -->
+    <bool name="config_batterySdCardAccessibility">true</bool>
 
 </resources>
